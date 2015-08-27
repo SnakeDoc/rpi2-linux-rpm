@@ -38,4 +38,6 @@ nosetests.xml
 # project dirs
 .cache
 tools
+linux
+source
 
