@@ -11,6 +11,7 @@ tools-cache := $(cache-dir)/tools
 tools-dir := $(cur-dir)/tools
 tools-archive := rpi2-cross-tools-current.tar.gz
 tools-url := http://build.vanomaly.net/job/rpi-cross-tools/ws/archives/$(tools-archive)
+source-cache := $(cache-dir)/source
 
 
 #########
@@ -27,12 +28,7 @@ release: init get-tools get-source make-rpm
 ###
 # Sets up necessary directories, etc...
 init:
-ifneq ("$(wildcard $(cache-dir))","$(cache-dir)")
-	mkdir $(cache-dir)
-endif
-ifneq ("$(wildcard $(tools-cache))","$(tools-cache)")
-	mkdir $(tools-cache)
-endif
+	mkdir -p $(cache-dir)/{tools,source}
 
 ###
 # Installs tools
