@@ -73,7 +73,8 @@ make-rpm:
 ###
 # Cleans the tools directory
 clean-tools:
-	(chmod --recursive 777 $(tools-dir) 2> /dev/null || true) && rm --preserve-root --recursive --force $(tools-dir)
+	chmod --recursive 777 $(tools-dir) 2> /dev/null || true
+	rm --preserve-root --recursive --force $(tools-dir)
 
 ###
 # Cleans the source directory
